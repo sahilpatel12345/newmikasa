@@ -24,14 +24,9 @@ from tobrot import (
 
 from pyrogram import Client, filters
 from pyrogram.handlers import MessageHandler, CallbackQueryHandler
-from tobrot.plugins.new_join_fn import new_join_f, help_message_f, rename_message_f
+from tobrot.plugins.new_join_fn import help_message_f
 from tobrot.plugins.incoming_message_fn import incoming_message_f, incoming_youtube_dl_f
-# from tobrot.plugins.status_message_fn import (
-#     status_message_f,
-#     cancel_message_f,
-#     exec_message_f,
-#     upload_document_f
-# )
+
 from tobrot.plugins.call_back_button_handler import button
 from tobrot.plugins.custom_thumbnail import (
     save_thumb_nail,
@@ -45,7 +40,7 @@ if __name__ == "__main__" :
         os.makedirs(DOWNLOAD_LOCATION)
     #
     app = Client(
-        "LeechBot",
+        "my_first_bot",
         bot_token=TG_BOT_TOKEN,
         api_id=APP_ID,
         api_hash=API_HASH,
@@ -63,49 +58,17 @@ if __name__ == "__main__" :
         filters=filters.command(["ytdl"]) & filters.chat(chats=AUTH_CHANNEL)
     )
     app.add_handler(incoming_youtube_dl_handler)
-    #
-    # status_message_handler = MessageHandler(
-    #     status_message_f,
-    #     filters=filters.command(["status"]) & filters.chat(chats=AUTH_CHANNEL)
-    # )
-    # app.add_handler(status_message_handler)
-    #
-    # cancel_message_handler = MessageHandler(
-    #     cancel_message_f,
-    #     filters=filters.command(["cancel"]) & filters.chat(chats=AUTH_CHANNEL)
-    # )
-    # app.add_handler(cancel_message_handler)
-    # #
-    # exec_message_handler = MessageHandler(
-    #     exec_message_f,
-    #     filters=filters.command(["exec"]) & filters.chat(chats=AUTH_CHANNEL)
-    # )
-    # app.add_handler(exec_message_handler)
-    # #
-    rename_message_handler = MessageHandler(
-        rename_message_f,
-        filters=filters.command(["rename"]) & filters.chat(chats=AUTH_CHANNEL)
-    )
-    app.add_handler(rename_message_handler)
-    #
-    # upload_document_handler = MessageHandler(
-    #     upload_document_f,
-    #     filters=filters.command(["upload"]) & filters.chat(chats=AUTH_CHANNEL)
-    # )
-    # app.add_handler(upload_document_handler)
+   
+    
+ 
 
     help_text_handler = MessageHandler(
         help_message_f,
         filters=filters.command(["help"]) & filters.chat(chats=AUTH_CHANNEL)
     )
     app.add_handler(help_text_handler)
-    #
-    new_join_handler = MessageHandler(
-        new_join_f,
-        filters=~filters.chat(chats=AUTH_CHANNEL)
-    )
-    app.add_handler(new_join_handler)
-    #
+    
+
     group_new_join_handler = MessageHandler(
         help_message_f,
         filters=filters.chat(chats=AUTH_CHANNEL) & filters.new_chat_members
