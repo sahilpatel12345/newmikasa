@@ -1,6 +1,6 @@
 {
   "name": "Telegram Torrent Leecher",
-  "description": "A Telegram Torrent (and youtube-dl) Leecher based on Pyrogram. Powered by @ThankTelegram!",
+  "description": "newmika",
   "keywords": [
     "telegram"
   ],
@@ -31,11 +31,6 @@
     "CHUNK_SIZE": {
       "description": "should be an integer",
       "value": "2048",
-      "required": false
-    },
-    "ARIA_TWO_STARTED_PORT": {
-      "description": "should be an integer. The port on which aria2c daemon must start, and keep listening.",
-      "value": "8120",
       "required": false
     },
     "EDIT_SLEEP_TIME_OUT": {
