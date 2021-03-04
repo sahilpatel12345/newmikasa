@@ -4,9 +4,9 @@
   "keywords": [
     "telegram"
   ],
-  "repository": "https://github.com/SpEcHiDe/PublicLeech",
-  "success_url": "https://telegram.dog/ThankTelegram",
-  "website": "https://github.com/SpEcHiDe/PublicLeech",
+  "repository": "https://github.com/sahilpatel12345/newmikasa.git",
+  "success_url": "https://github.com/sahilpatel12345/newmikasa.git",
+  "website": "https://github.com/sahilpatel12345/newmikasa.git",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode",
@@ -35,7 +35,7 @@
     },
     "ARIA_TWO_STARTED_PORT": {
       "description": "should be an integer. The port on which aria2c daemon must start, and keep listening.",
-      "value": "6800",
+      "value": "8120",
       "required": false
     },
     "EDIT_SLEEP_TIME_OUT": {
